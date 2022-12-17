@@ -4,8 +4,8 @@ const animationDuration = 250;
 
 class TextFieldWidget extends StatefulWidget {
   final Color fillColor;
-  final TextStyle inputTextStyle;
-  final TextStyle suffixTextStyle;
+  final TextStyle? inputTextStyle;
+  final TextStyle? suffixTextStyle;
   final TextInputType textInputType;
   final TextEditingController textEditingController;
 
@@ -34,7 +34,7 @@ class _TextFieldWidgetState extends State<TextFieldWidget>
   bool isRight = true;
   bool isSuffixVisible = true;
 
-  late TextStyle fontStyle;
+  late TextStyle? fontStyle;
 
   final focus = FocusNode();
 

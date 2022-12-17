@@ -3,19 +3,23 @@ import 'package:flutter/material.dart';
 const iconSize = 36.0;
 const iconPadding = 4.0;
 const iconBackgroundBorderRadius = 2.0;
+const defaultLabelStyle = TextStyle(
+  color: Color(0xff4D5366),
+  fontSize: 12.0,
+);
 
 class LabelWidget extends StatelessWidget {
   final String labelText;
-  final TextStyle labelStyle;
+  final TextStyle? labelStyle;
   final Color iconBackgroundColor;
-  final String icon;
+  final Widget icon;
 
   const LabelWidget({
     Key? key,
     required this.icon,
     required this.iconBackgroundColor,
     required this.labelText,
-    required this.labelStyle,
+    this.labelStyle,
   }) : super(key: key);
 
   @override
@@ -32,15 +36,12 @@ class LabelWidget extends StatelessWidget {
               Radius.circular(iconBackgroundBorderRadius),
             ),
           ),
-
-          /// TODO(iam): change when create icons
-          // child: SvgPicture.asset(widget.icon),
-          child: Center(child: Text(icon)),
+          child: Center(child: icon),
         ),
         const SizedBox(width: 10),
         Text(
           labelText.toUpperCase(),
-          style: labelStyle,
+          style: labelStyle ?? defaultLabelStyle,
         )
       ],
     );

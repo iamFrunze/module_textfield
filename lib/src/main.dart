@@ -6,14 +6,15 @@ const padding = 12.0;
 
 class ModuleTextField extends StatefulWidget {
   final double width;
-  final String icon;
+  final Widget icon;
+  final Color iconBackgroundColor;
   final String labelText;
-  final TextStyle labelStyle;
+  final TextStyle? labelStyle;
   final Color borderColor;
 
   final Color fillColor;
-  final TextStyle inputTextStyle;
-  final TextStyle suffixTextStyle;
+  final TextStyle? inputTextStyle;
+  final TextStyle? suffixTextStyle;
   final TextEditingController textEditingController;
   final TextInputType textInputType;
 
@@ -21,6 +22,7 @@ class ModuleTextField extends StatefulWidget {
     Key? key,
     this.width = 400,
     required this.icon,
+    required this.iconBackgroundColor,
     required this.labelText,
     required this.labelStyle,
     required this.borderColor,
@@ -54,7 +56,7 @@ class _ModuleTextFieldState extends State<ModuleTextField> {
         children: [
           LabelWidget(
             icon: widget.icon,
-            iconBackgroundColor: Colors.grey,
+            iconBackgroundColor: widget.iconBackgroundColor,
             labelText: widget.labelText,
             labelStyle: widget.labelStyle,
           ),
