@@ -46,6 +46,7 @@ class _ModuleTextFieldState extends State<ModuleTextField> {
     return Container(
       padding: const EdgeInsets.all(padding),
       decoration: BoxDecoration(
+        color: Colors.white,
         border: Border.all(
           color: widget.borderColor,
         ),
@@ -60,13 +61,16 @@ class _ModuleTextFieldState extends State<ModuleTextField> {
             labelText: widget.labelText,
             labelStyle: widget.labelStyle,
           ),
-          const SizedBox(height: 16),
-          TextFieldWidget(
-            fillColor: widget.fillColor,
-            inputTextStyle: widget.inputTextStyle,
-            suffixTextStyle: widget.suffixTextStyle,
-            textEditingController: widget.textEditingController,
-            textInputType: widget.textInputType,
+          const SizedBox(height: 14),
+          SizedBox(
+            height: 60,
+            child: TextFieldWidget(
+              fillColor: widget.fillColor,
+              inputTextStyle: widget.inputTextStyle,
+              suffixTextStyle: widget.suffixTextStyle,
+              textEditingController: widget.textEditingController,
+              textInputType: widget.textInputType,
+            ),
           ),
         ],
       ),
