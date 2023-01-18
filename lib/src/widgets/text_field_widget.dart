@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-const animationDuration = 250;
+const animationDuration = 1000;
 
 class TextFieldWidget extends StatefulWidget {
   final Color fillColor;
@@ -88,25 +88,23 @@ class _TextFieldWidgetState extends State<TextFieldWidget>
         Visibility(
           visible: isSuffixVisible,
           child: Expanded(
-            child: SizedBox(
-              height: 60,
-              child: InkWell(
-                onTap: () {
-                  animationController.forward().whenComplete(() {
-                    setState(() {
-                      isSuffixVisible = !isSuffixVisible;
-                      focus.requestFocus();
-                    });
+            child: InkWell(
+              onTap: () {
+                animationController.forward().whenComplete(() {
+                  setState(() {
+                    isSuffixVisible = !isSuffixVisible;
+                    focus.requestFocus();
                   });
-                },
-                child: Ink(
-                  color: animationColor.value,
-                  child: Align(
-                    alignment: animationAlign.value,
-                    child: Text(
-                      widget.textEditingController.text,
-                      style: animationTextStyle.value,
-                    ),
+                });
+              },
+              child: Ink(
+                color: animationColor.value,
+                padding: const EdgeInsets.only(left: 12),
+                child: Align(
+                  alignment: animationAlign.value,
+                  child: Text(
+                    widget.textEditingController.text,
+                    style: animationTextStyle.value,
                   ),
                 ),
               ),
