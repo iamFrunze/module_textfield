@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-const animationDuration = 1000;
+const animationDuration = 250;
 
 class TextFieldWidget extends StatefulWidget {
   final Color fillColor;
