@@ -119,6 +119,7 @@ class _TextFieldWidgetState extends State<TextFieldWidget>
               curve: Curves.easeOut,
               duration: const Duration(milliseconds: animationDuration),
               child: TextFormField(
+                textAlignVertical: TextAlignVertical.center,
                 focusNode: focus,
                 controller: widget.textEditingController,
                 keyboardType: widget.textInputType,
